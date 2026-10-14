@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DangKy</title>
+</head>
+<body>
+
+    <h2>Form Đăng Ký</h2>
+
+    <form action="#" method="post">
+        <table border="1" cellpadding="8" cellspacing="0">
+            <tr>
+                <td><label for="name"><b>Họ và tên:</b></label></td>
+                <td><input type="text" id="name" name="fullname" placeholder="Nhập họ tên" required></td>
+            </tr>
+            <tr>
+                <td><label for="pass"><b>Mật khẩu:</b></label></td>
+                <td><input type="password" id="pass" name="password" required></td>
+            </tr>
+            <tr>
+                <td><label for="email"><b>Email:</b></label></td>
+                <td><input type="email" id="email" name="email" placeholder="example@gmail.com" required></td>
+            </tr>
+            <tr>
+                <td><b>Giới tính:</b></td>
+                <td>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Nam</label>
+                    
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Nữ</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="country"><b>Quốc gia:</b></label></td>
+                <td>
+                    <select id="country" name="country">
+                        <option value="vn">Việt Nam</option>
+                        <option value="in">Ấn Độ</option>
+                        <option value="us">Hoa Kỳ</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="submit">Đăng ký</button>
+                    <button type="reset">Nhập lại</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

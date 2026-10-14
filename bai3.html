@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thời khóa biểu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 700px;
+            max-width: 100%;
+            margin: 0 auto; /* Căn giữa bảng trên màn hình */
+            text-align: center;
+            font-size: 16px;
+        }
+
+        th, td {
+            border: 1px solid #333;
+            padding: 12px 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .session {
+            font-weight: bold;
+            background-color: #fafafa;
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center;">Lịch Học</h1>
+
+    <table>
+        <!-- Hàng 1: Tiêu đề các thứ (Tổng 6 cột) -->
+        <tr>
+            <th>Buổi</th>
+            <th>Thứ Hai</th>
+            <th>Thứ Ba</th>
+            <th>Thứ Tư</th>
+            <th>Thứ Năm</th>
+            <th>Thứ Sáu</th>
+        </tr>
+
+        <!-- Sáng: Ca 1 (Hàng 2) -->
+        <tr>
+            <td rowspan="2" class="session">Sáng</td>
+            <td>LTHĐT</td>
+            <td rowspan="2">CTDL-GT</td>
+            <td rowspan="2">PTHT</td>
+            <td>CSDL</td>
+            <td rowspan="2">CSDL</td>
+        </tr>
+
+        <!-- Sáng: Ca 2 (Hàng 3: Cần 2 ô bù vào Thứ 2 và Thứ 5) -->
+        <tr>
+            <td>LTW</td>
+            <td>LTW</td>
+        </tr>
+
+        <!-- Chiều: Ca 1 (Hàng 4: Buổi + 5 thứ) -->
+        <tr>
+            <td rowspan="2" class="session">Chiều</td>
+            <td>TDTT</td>
+            <td>QTM</td>
+            <td>TRR</td>
+            <td colspan="2">TDTT</td> <!-- Thứ 5 và Thứ 6 học chung môn (2 cột) -->
+        </tr>
+
+        <!-- Chiều: Ca 2 (Hàng 5: Cần đúng 5 cột cho Thứ 2 -> Thứ 6) -->
+        <tr>
+            <td colspan="2">AV</td> <!-- Thứ 2 + Thứ 3 (2 cột) -->
+            <td>CSDL</td>          <!-- Thứ 4 (1 cột) -->
+            <td colspan="2">CNTT CB</td> <!-- Thứ 5 + Thứ 6 (2 cột) -->
+        </tr>
+    </table>
+
+</body>
+</html>

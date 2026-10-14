@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Thực Hành Nhóm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 20px;
+        }
+
+        /* Khung bảng chính */
+        .main-table {
+            width: 820px;
+            max-width: 100%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ccc;
+        }
+
+        .header-title {
+            background-color: #0288d1;
+            color: #ffffff;
+            height: 45px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        /* Cột Menu bên trái */
+        .sidebar {
+            width: 220px;
+            padding: 15px;
+            vertical-align: top;
+            background-color: #fafafa;
+            border-right: 1px solid #ddd;
+        }
+
+        .sidebar h4 {
+            margin: 12px 0 6px 0;
+            color: #333;
+            font-size: 15px;
+            border-bottom: 2px solid #0288d1;
+            padding-bottom: 4px;
+        }
+
+        .sidebar ul, .sidebar ol {
+            padding-left: 20px;
+            margin: 6px 0 12px 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 6px;
+        }
+
+        .sidebar a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .sidebar a:hover {
+            text-decoration: underline;
+            color: #d32f2f;
+        }
+
+        /* Cột Nội dung hiển thị bên phải */
+        .content-area {
+            vertical-align: top;
+            padding: 0;
+            background-color: #ffffff;
+        }
+
+        #khungmua {
+            background-color: #e8f5e9;
+            text-align: center;
+            padding: 20px 10px;
+            min-height: 420px;
+            box-sizing: border-box;
+        }
+
+        #tieude {
+            color: #2e7d32;
+            font-size: 26px;
+            margin: 0 0 12px 0;
+        }
+
+        #hinhanh {
+            width: 340px;
+            max-width: 90%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        #mota {
+            color: #d32f2f;
+            font-style: italic;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+        #khunglich {
+            width: 100%;
+            height: 440px;
+            border: none;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="main-table">
+        <!-- Hàng tiêu đề -->
+        <tr>
+            <th colspan="2" class="header-title">
+                BÀI THỰC HÀNH NHÓM - THIẾT KẾ WEB
+            </th>
+        </tr>
+
+        <!-- Thân trang -->
+        <tr>
+            <!-- Cột Menu Trái -->
+            <td class="sidebar">
+                <h4>Các mùa trong năm</h4>
+                <ul>
+                    <li><a href="javascript:void(0)" onclick="chonMua('xuan')">Mùa xuân</a></li>
+                    <li><a href="javascript:void(0)" onclick="chonMua('ha')">Mùa hạ</a></li>
+                    <li><a href="javascript:void(0)" onclick="chonMua('thu')">Mùa thu</a></li>
+                    <li><a href="javascript:void(0)" onclick="chonMua('dong')">Mùa đông</a></li>
+                </ul>
+
+                <h4>Học tập</h4>
+                <ul>
+                    <!-- Click đổi view và gán link trực tiếp cho iframe -->
+                    <li><a href="javascript:void(0)" onclick="xemLichHoc('Baitap3.html')">Lịch học</a></li>
+                </ul>
+
+                <h4>Danh sách thành viên</h4>
+                <ol>
+                    <li>Nguyễn Văn A</li>
+                    <li>Phạm Văn B</li>
+                    <li>Trần Thị C</li>
+                </ol>
+            </td>
+
+            <!-- Cột Nội Dung Phải -->
+            <td class="content-area">
+                <!-- Khu vực Mùa -->
+                <div id="khungmua">
+                    <h2 id="tieude">MÙA XUÂN</h2>
+                    <img id="hinhanh" 
+                         src="https://img.thuthuat123.com/uploads/2019/07/15/anh-bong-hoa-hong-bay-mau_105817556.jpg" 
+                         alt="Mùa xuân">
+                    <p id="mota">Mùa xuân là mùa cây cối đâm chồi nảy lộc, trăm hoa khoe sắc rực rỡ.</p>
+                </div>
+
+                <!-- Khu vực nhúng Lịch học -->
+                <iframe id="khunglich" name="noidung" title="Thời khóa biểu"></iframe>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        // Gom dữ liệu vào một chỗ để dễ bảo trì và sửa chữa
+        const duLieuMua = {
+            xuan: {
+                ten: "MÙA XUÂN",
+                anh: "https://img.thuthuat123.com/uploads/2019/07/15/anh-bong-hoa-hong-bay-mau_105817556.jpg",
+                mota: "Mùa xuân là mùa cây cối đâm chồi nảy lộc, trăm hoa khoe sắc rực rỡ."
+            },
+            ha: {
+                ten: "MÙA HẠ",
+                anh: "https://tse4.mm.bing.net/th/id/OIP.f8D17btbwwm3oDhekD9lZgHaFG?r=0&pid=Api&h=220&P=0",
+                mota: "Mùa hạ mang theo ánh nắng chói chang cùng tiếng ve kêu râm ran."
+            },
+            thu: {
+                ten: "MÙA THU",
+                anh: "https://tse2.mm.bing.net/th/id/OIP.pM7jCz6GkutzCiyppMWPnwHaE7?r=0&pid=Api&h=220&P=0",
+                mota: "Mùa thu dịu mát với bầu trời trong xanh và những tán lá vàng rơi."
+            },
+            dong: {
+                ten: "MÙA ĐÔNG",
+                anh: "https://tse1.mm.bing.net/th/id/OIP.PzYZEuku8eAKMBscWYHnLgHaE8?r=0&pid=Api&h=220&P=0",
+                mota: "Mùa đông với những cơn gió lạnh buốt và không gian trầm lắng."
+            }
+        };
+
+        // Hàm đổi mùa
+        function chonMua(key) {
+            const data = duLieuMua[key];
+            
+            // Đổi giao diện hiển thị
+            document.getElementById("khungmua").style.display = "block";
+            document.getElementById("khunglich").style.display = "none";
+
+            // Cập nhật nội dung
+            document.getElementById("tieude").innerText = data.ten;
+            document.getElementById("hinhanh").src = data.anh;
+            document.getElementById("hinhanh").alt = data.ten;
+            document.getElementById("mota").innerText = data.mota;
+        }
+
+        // Hàm hiển thị thời khóa biểu (Baitap3.html)
+        function xemLichHoc(urlFile) {
+            document.getElementById("khungmua").style.display = "none";
+            
+            const iframe = document.getElementById("khunglich");
+            iframe.style.display = "block";
+            
+            // Chỉ cập nhật src khi chưa nạp hoặc cần nạp lại
+            if (iframe.src !== urlFile) {
+                iframe.src = urlFile;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Các Mùa Trong Năm</title>
+    <style>
+        body {
+            background-color: #e0f7fa;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        table {
+            width: 480px;
+            max-width: 95%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+        .nav-btn {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .nav-btn:hover {
+            color: #d9534f;
+            text-decoration: underline;
+        }
+        #main-img {
+            width: 320px;
+            max-width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 6px;
+            display: block;
+            margin: 10px auto;
+        }
+        .content-box {
+            background-color: #f1f8e9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="color: #0277bd;">Các Mùa Trong Năm</h1>
+
+    <table border="1">
+        <!-- Hàng nút chọn mùa -->
+        <tr>
+            <td><a class="nav-btn" href="javascript:void(0)" onclick="changeSeason('xuan')">Mùa Xuân</a></td>
+            <td><a class="nav-btn" href="javascript:void(0)" onclick="changeSeason('ha')">Mùa Hạ</a></td>
+            <td><a class="nav-btn" href="javascript:void(0)" onclick="changeSeason('thu')">Mùa Thu</a></td>
+            <td><a class="nav-btn" href="javascript:void(0)" onclick="changeSeason('dong')">Mùa Đông</a></td>
+        </tr>
+
+        <!-- Hàng hiển thị chi tiết -->
+        <tr class="content-box">
+            <td colspan="4">
+                <h2 id="title" style="color: #2e7d32;">Mùa Xuân</h2>
+                
+                <img id="main-img" 
+                     src="https://img.thuthuat123.com/uploads/2019/07/15/anh-bong-hoa-hong-bay-mau_105817556.jpg" 
+                     alt="Hình ảnh mùa">
+                
+                <p id="desc" style="color: #c62828; font-style: italic;">
+                    Mùa Xuân là mùa cây cối đâm chồi nảy lộc, trăm hoa đua nở.
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        // Dữ liệu từng mùa
+        const data = {
+            xuan: {
+                title: "Mùa Xuân",
+                img: "https://img.thuthuat123.com/uploads/2019/07/15/anh-bong-hoa-hong-bay-mau_105817556.jpg",
+                desc: "Mùa Xuân là mùa cây cối đâm chồi nảy lộc, trăm hoa đua nở."
+            },
+            ha: {
+                title: "Mùa Hạ",
+                img: "https://tse4.mm.bing.net/th/id/OIP.f8D17btbwwm3oDhekD9lZgHaFG?r=0&pid=Api&h=220&P=0",
+                desc: "Mùa Hạ mang theo cái nắng rực rỡ và tiếng ve râm ran."
+            },
+            thu: {
+                title: "Mùa Thu",
+                img: "https://tse2.mm.bing.net/th/id/OIP.pM7jCz6GkutzCiyppMWPnwHaE7?r=0&pid=Api&h=220&P=0",
+                desc: "Mùa Thu dịu dàng với lá vàng rơi và làn gió mát lành."
+            },
+            dong: {
+                title: "Mùa Đông",
+                img: "https://tse1.mm.bing.net/th/id/OIP.PzYZEuku8eAKMBscWYHnLgHaE8?r=0&pid=Api&h=220&P=0",
+                desc: "Mùa Đông với không khí se lạnh đặc trưng và tuyết trắng."
+            }
+        };
+
+        // Hàm cập nhật giao diện
+        function changeSeason(seasonKey) {
+            const season = data[seasonKey];
+            document.getElementById("title").innerText = season.title;
+            document.getElementById("main-img").src = season.img;
+            document.getElementById("desc").innerText = season.desc;
+        }
+    </script>
+
+</body>
+</html>
